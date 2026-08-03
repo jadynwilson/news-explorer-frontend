@@ -1,0 +1,53 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navigation__link {
+  position: relative;
+  font-size: 16px;
+  padding-bottom: 4px;
+  opacity: 0.8;
+}
+
+.navigation__link_active {
+  opacity: 1;
+}
+
+.navigation__link_active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -31px;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.navigation__signin-btn {
+  border: 1px solid currentColor;
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-size: 14px;
+  color: inherit;
+}
+
+.navigation__signin-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navigation__user-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid currentColor;
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: inherit;
+}
+
+.navigation__logout-icon {
+  font-size: 14px;
+}
