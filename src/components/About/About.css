@@ -55,3 +55,31 @@
 .about__text:last-child {
   margin-bottom: 0;
 }
+@media (max-width: 880px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 60px 24px;
+  }
+
+  .about__content {
+    text-align: center;
+  }
+
+  .about__heading,
+  .about__text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__image-placeholder {
+    width: 240px;
+    height: 240px;
+  }
+
+  .about__heading {
+    font-size: 24px;
+  }
+}

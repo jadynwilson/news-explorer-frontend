@@ -51,3 +51,19 @@
 .navigation__logout-icon {
   font-size: 14px;
 }
+
+@media (max-width: 480px) {
+  .navigation {
+    gap: 16px;
+  }
+
+  .navigation__link {
+    font-size: 14px;
+  }
+
+  .navigation__signin-btn,
+  .navigation__user-pill {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

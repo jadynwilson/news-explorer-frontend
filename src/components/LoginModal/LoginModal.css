@@ -1,0 +1,65 @@
+.login-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.login-modal__label {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-accent);
+  text-align: left;
+}
+
+.login-modal__input {
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text);
+  outline: none;
+  text-align: left;
+}
+.login-modal__input:focus {
+  border-bottom-color: var(--color-accent);
+}
+.login-modal__submit {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 100px;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-family: "Roboto", var(--font-body);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.login-modal__submit:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+.login-modal__submit:active:not(:disabled) {
+  background-color: var(--color-accent-active);
+}
+
+.login-modal__submit:disabled {
+  background-color: #e8e8e8;
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.login-modal__switch {
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.login-modal__switch-link {
+  color: var(--color-accent);
+  font-weight: 500;
+}

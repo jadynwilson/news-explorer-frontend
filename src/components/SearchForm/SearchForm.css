@@ -61,3 +61,20 @@
   color: #ff5c5c;
   font-size: 13px;
 }
+
+@media (max-width: 480px) {
+  .search-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-form__input,
+  .search-form__button {
+    border-radius: 100px;
+    width: 100%;
+  }
+
+  .search-form__button {
+    padding: 16px 24px;
+  }
+}

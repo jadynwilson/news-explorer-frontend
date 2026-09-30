@@ -37,3 +37,45 @@
 .results__show-more:hover {
   background-color: #dadada;
 }
+
+.results__message {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.results__message-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.results__message-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #6b6b6b;
+}
+
+@media (max-width: 1320px) {
+  .results__grid {
+    grid-template-columns: repeat(2, 400px);
+  }
+}
+
+@media (max-width: 880px) {
+  .results__grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .results {
+    padding: 40px 16px;
+  }
+
+  .results__heading {
+    font-size: 24px;
+  }
+}

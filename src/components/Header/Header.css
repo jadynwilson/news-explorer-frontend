@@ -69,3 +69,40 @@
 .header_theme_light .header__nav-bar {
   border-bottom: 1px solid #e8e8e8;
 }
+@media (max-width: 768px) {
+  .header__container {
+    padding: 16px 24px;
+  }
+
+  .header__hero {
+    padding: 40px 24px 60px;
+  }
+
+  .header__title {
+    font-size: 36px;
+  }
+
+  .header__subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__container {
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .header__logo {
+    font-size: 16px;
+  }
+
+  .header__hero {
+    padding: 32px 16px 48px;
+  }
+
+  .header__title {
+    font-size: 28px;
+  }
+}
