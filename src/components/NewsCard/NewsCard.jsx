@@ -2,6 +2,7 @@ import { useState } from "react";
 import bookmarkNormal from "../../images/bookmark-normal.svg";
 import bookmarkHover from "../../images/bookmark-hover.svg";
 import bookmarkMarked from "../../images/bookmark-marked.svg";
+import trashIcon from "../../images/trash.svg";
 import "./NewsCard.css";
 
 function NewsCard({
@@ -33,6 +34,7 @@ function NewsCard({
   }
 
   function getBookmarkIcon() {
+    if (isSavedNewsPage) return trashIcon;
     if (isSaved) return bookmarkMarked;
     if (showTooltip) return bookmarkHover;
     return bookmarkNormal;
