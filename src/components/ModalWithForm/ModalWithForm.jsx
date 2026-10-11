@@ -1,18 +1,11 @@
-import "./ModalWithForm.css";
+import './ModalWithForm.css'
 
-function ModalWithForm({
-  title,
-  children,
-  isOpen,
-  onClose,
-  onSubmit,
-  isSubmitDisabled,
-}) {
-  if (!isOpen) return null;
+function ModalWithForm({ title, children, isOpen, onClose, onSubmit }) {
+  if (!isOpen) return null
 
   function handleOverlayClick(e) {
     if (e.target === e.currentTarget) {
-      onClose();
+      onClose()
     }
   }
 
@@ -25,7 +18,7 @@ function ModalWithForm({
           onClick={onClose}
           aria-label="Close"
         >
-          ✕
+          <span className="modal__close-icon" aria-hidden="true"></span>
         </button>
         <h2 className="modal__title">{title}</h2>
         <form className="modal__form" onSubmit={onSubmit} noValidate>
@@ -33,7 +26,7 @@ function ModalWithForm({
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default ModalWithForm;
+export default ModalWithForm
