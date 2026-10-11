@@ -1,23 +1,32 @@
-import { useState, useEffect } from "react";
-import NewsCard from "../NewsCard/NewsCard";
-import Preloader from "../Preloader/Preloader";
-import About from "../About/About";
-import "./Main.css";
+import { useState, useEffect } from 'react'
+import NewsCard from '../NewsCard/NewsCard'
+import Preloader from '../Preloader/Preloader'
+import About from '../About/About'
+import './Main.css'
 
-const CARDS_PER_PAGE = 3;
+const CARDS_PER_PAGE = 3
 
-function Main({ articles, isLoading, error, hasSearched, searchKeyword }) {
-  const [visibleCount, setVisibleCount] = useState(CARDS_PER_PAGE);
+function Main({
+  articles,
+  isLoading,
+  error,
+  hasSearched,
+  loggedIn,
+  savedArticles,
+  onSaveClick,
+  onRemoveClick,
+}) {
+  const [visibleCount, setVisibleCount] = useState(CARDS_PER_PAGE)
 
   useEffect(() => {
-    setVisibleCount(CARDS_PER_PAGE);
-  }, [articles]);
+    setVisibleCount(CARDS_PER_PAGE)
+  }, [articles])
 
-  const visibleArticles = articles.slice(0, visibleCount);
-  const hasMore = visibleCount < articles.length;
+  const visibleArticles = articles.slice(0, visibleCount)
+  const hasMore = visibleCount < articles.length
 
   function handleShowMore() {
-    setVisibleCount((prev) => prev + CARDS_PER_PAGE);
+    setVisibleCount((prev) => prev + CARDS_PER_PAGE)
   }
 
   return (
@@ -28,9 +37,7 @@ function Main({ articles, isLoading, error, hasSearched, searchKeyword }) {
 
           {!isLoading && error && (
             <div className="results__message">
-              <h2 className="results__message-title">
-                Sorry, something went wrong
-              </h2>
+              <h2 className="results__message-title">Sorry, something went wrong</h2>
               <p className="results__message-text">{error}</p>
             </div>
           )}
@@ -48,30 +55,30 @@ function Main({ articles, isLoading, error, hasSearched, searchKeyword }) {
             <>
               <h2 className="results__heading">Search results</h2>
               <ul className="results__grid">
-                {visibleArticles.map((article) => (
-                  <NewsCard
-                    key={article.url}
-                    article={{
-                      title: article.title,
-                      description: article.description,
-                      urlToImage: article.urlToImage,
-                      publishedAt: article.publishedAt,
-                      source: article.source?.name,
-                    }}
-                    loggedIn={false}
-                    isSaved={false}
-                    isSavedNewsPage={false}
-                    onSaveClick={() => {}}
-                    onRemoveClick={() => {}}
-                  />
-                ))}
+                {visibleArticles.map((article) => {
+                  const card = {
+                    url: article.url,
+                    title: article.title,
+                    description: article.description,
+                    urlToImage: article.urlToImage,
+                    publishedAt: article.publishedAt,
+                    source: article.source?.name,
+                  }
+                  return (
+                    <NewsCard
+                      key={card.url}
+                      article={card}
+                      loggedIn={loggedIn}
+                      isSaved={savedArticles.some((saved) => saved.url === card.url)}
+                      isSavedNewsPage={false}
+                      onSaveClick={onSaveClick}
+                      onRemoveClick={onRemoveClick}
+                    />
+                  )
+                })}
               </ul>
               {hasMore && (
-                <button
-                  type="button"
-                  className="results__show-more"
-                  onClick={handleShowMore}
-                >
+                <button type="button" className="results__show-more" onClick={handleShowMore}>
                   Show more
                 </button>
               )}
@@ -81,7 +88,7 @@ function Main({ articles, isLoading, error, hasSearched, searchKeyword }) {
       )}
       <About />
     </main>
-  );
+  )
 }
 
-export default Main;
+export default Main

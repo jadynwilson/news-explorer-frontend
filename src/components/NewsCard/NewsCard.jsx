@@ -26,7 +26,7 @@ function NewsCard({
 
   function handleBookmarkClick() {
     if (!loggedIn) return;
-    if (isSavedNewsPage) {
+    if (isSavedNewsPage || isSaved) {
       onRemoveClick(article);
     } else {
       onSaveClick(article);

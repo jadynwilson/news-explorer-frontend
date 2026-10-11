@@ -1,15 +1,26 @@
-const BASE_URL = "https://newsapi.org/v2/everything";
-const PROXY_URL = "https://api.allorigins.win/raw?url=";
+const NEWS_API_BASE_URL = import.meta.env.PROD
+  ? "https://nomoreparties.co/news/v2/everything"
+  : "https://newsapi.org/v2/everything";
+
+const PAGE_SIZE = 100;
+
+function formatDate(date) {
+  return date.toISOString().split("T")[0];
+}
 
 export function searchArticles(keyword) {
   const apiKey = import.meta.env.VITE_NEWS_API_KEY;
 
-  const oneMonthAgo = new Date();
-  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-  const fromDate = oneMonthAgo.toISOString().split("T")[0];
+  const today = new Date();
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(today.getDate() - 7);
 
-  const newsApiUrl = `${BASE_URL}?q=${encodeURIComponent(keyword)}&from=${fromDate}&sortBy=publishedAt&language=en&apiKey=${apiKey}`;
-  const url = `${PROXY_URL}${encodeURIComponent(newsApiUrl)}`;
+  const url =
+    `${NEWS_API_BASE_URL}?q=${encodeURIComponent(keyword)}` +
+    `&from=${formatDate(sevenDaysAgo)}` +
+    `&to=${formatDate(today)}` +
+    `&pageSize=${PAGE_SIZE}` +
+    `&apiKey=${apiKey}`;
 
   return fetch(url)
     .then((res) => {
@@ -18,10 +29,5 @@ export function searchArticles(keyword) {
       }
       return res.json();
     })
-    .then((data) => {
-      if (data.status !== "ok") {
-        return Promise.reject(data.message || "Something went wrong");
-      }
-      return data.articles;
-    });
+    .then((data) => data.articles);
 }

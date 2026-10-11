@@ -1,45 +1,9 @@
 import NewsCard from "../NewsCard/NewsCard";
 import "./SavedNews.css";
 
-const PLACEHOLDER_SAVED = [
-  {
-    title: 'Everyone Needs a Special "Sit Spot" in Nature',
-    description:
-      'Ever since I read Richard Louv\'s influential book, "Last Child in the Woods," the idea of having a special "sit spot" has stuck with me.',
-    urlToImage:
-      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=600",
-    publishedAt: "2020-11-04",
-    source: "Treehugger",
-    keyword: "Nature",
-    url: "placeholder-1",
-  },
-  {
-    title: "Nature makes you better",
-    description:
-      "We all know how good nature can make us feel. We have known it for millennia.",
-    urlToImage:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600",
-    publishedAt: "2019-02-19",
-    source: "National Geographic",
-    keyword: "Nature",
-    url: "placeholder-2",
-  },
-  {
-    title: "Nostalgic Photos of Tourists in U.S. National Parks",
-    description:
-      "Uri Løvevild Golman and Helle Løvevild Golman are National Geographic Explorers.",
-    urlToImage:
-      "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=600",
-    publishedAt: "2020-10-19",
-    source: "National Geographic",
-    keyword: "Yellowstone",
-    url: "placeholder-3",
-  },
-];
-
 function SavedNews({
-  savedArticles = PLACEHOLDER_SAVED,
-  userName = "Elise",
+  savedArticles = [],
+  userName = "",
   onRemoveClick = () => {},
 }) {
   const keywords = [...new Set(savedArticles.map((a) => a.keyword))];
