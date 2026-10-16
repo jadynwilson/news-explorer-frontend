@@ -1,11 +1,25 @@
-import './ModalWithForm.css'
+import { useEffect } from "react";
+import "./ModalWithForm.css";
 
 function ModalWithForm({ title, children, isOpen, onClose, onSubmit }) {
-  if (!isOpen) return null
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    function handleEscape(e) {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    }
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
 
   function handleOverlayClick(e) {
     if (e.target === e.currentTarget) {
-      onClose()
+      onClose();
     }
   }
 
@@ -26,7 +40,7 @@ function ModalWithForm({ title, children, isOpen, onClose, onSubmit }) {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default ModalWithForm
+export default ModalWithForm;
