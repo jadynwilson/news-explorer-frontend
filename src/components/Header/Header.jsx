@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 import "./Header.css";
@@ -16,7 +17,9 @@ function Header({
     >
       <div className="header__nav-bar">
         <div className="header__container">
-          <p className="header__logo">NewsExplorer</p>
+          <Link to="/" className="header__logo">
+            NewsExplorer
+          </Link>
           <Navigation
             loggedIn={loggedIn}
             userName={userName}
