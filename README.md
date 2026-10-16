@@ -31,5 +31,3 @@ npm run dev
 ## Author
 
 Jadyn Marx - Currently going to school for Software engenieering through the Tripletem program.
-
-News API key: fcd1846b14614fa2a2f82e3a037c1afe
