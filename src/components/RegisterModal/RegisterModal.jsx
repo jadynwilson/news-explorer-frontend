@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../LoginModal/LoginModal.css";
 
@@ -15,6 +15,14 @@ function RegisterModal({
 
   const isValid =
     email.trim() !== "" && password.trim() !== "" && username.trim() !== "";
+
+  useEffect(() => {
+    if (!isOpen) {
+      setEmail("");
+      setPassword("");
+      setUsername("");
+    }
+  }, [isOpen]);
 
   function handleSubmit(e) {
     e.preventDefault();

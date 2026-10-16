@@ -73,7 +73,7 @@ function App() {
     setSearchKeyword(keyword);
 
     searchArticles(keyword)
-      .then((results) => setArticles(results))
+      .then((results) => setArticles((results || []).filter((article) => article.urlToImage && article.title)))
       .catch((err) => {
         console.error(err);
         setError(
