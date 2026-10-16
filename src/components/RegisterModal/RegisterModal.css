@@ -1,0 +1,6 @@
+.login-modal__error {
+  text-align: center;
+  color: #ff5c5c;
+  font-size: 13px;
+  margin-top: -8px;
+}
