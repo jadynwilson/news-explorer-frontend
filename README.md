@@ -31,3 +31,8 @@ npm run dev
 ## Author
 
 Jadyn Marx - Currently going to school for Software engenieering through the Tripletem program.
+
+## Project Pitch Video
+
+Check out [this video](https://www.loom.com/share/55b666fc189f43a28ed881781efa4b5c), where I describe my
+project and some challenges I faced while building it.
