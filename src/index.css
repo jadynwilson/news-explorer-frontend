@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Roboto Slab";
+  src:
+    url("./fonts/roboto-slab-400-regular.woff2") format("woff2"),
+    url("./fonts/roboto-slab-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src:
+    url("./fonts/roboto-slab-700.woff2") format("woff2"),
+    url("./fonts/roboto-slab-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("./fonts/roboto-400-regular.woff2") format("woff2"),
+    url("./fonts/roboto-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("./fonts/roboto-500.woff2") format("woff2"),
+    url("./fonts/roboto-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("./fonts/roboto-700.woff2") format("woff2"),
+    url("./fonts/roboto-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("./fonts/roboto-900.woff2") format("woff2"),
+    url("./fonts/roboto-900.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src:
+    url("./fonts/inter-400-regular.woff2") format("woff2"),
+    url("./fonts/inter-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src:
+    url("./fonts/inter-500.woff2") format("woff2"),
+    url("./fonts/inter-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Colors */
+  --color-accent: #2f71e5;
+  --color-accent-hover: #347eff;
+  --color-accent-active: #2a65cc;
+  --color-text: #1a1b22;
+  --color-bg-page: #f5f6f7;
+  --color-bg-card: #ffffff;
+  --color-placeholder-gray: #949494;
+
+  /* Fonts */
+  --font-display: "Roboto Slab", "Georgia", serif;
+  --font-body: "Roboto", "Arial", sans-serif;
+  --font-ui: "Inter", "Arial", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
